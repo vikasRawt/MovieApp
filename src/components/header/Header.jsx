@@ -76,7 +76,7 @@ window.scrollTo(0,0)   //means whenever we go to new page or page changes then t
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
+        <div className="logo" onClick={()=>navigate(`/`)}>
           <img src={logo} alt="header-img" />
         </div>
         <ul className="menuItems">
