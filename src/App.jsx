@@ -6,7 +6,7 @@ import { getAppConfiguration,getAppGenres } from "./store/homeSlice";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from './components/header/header';
-import Footer from './components/footer/footer';
+import Footer from './components/footer/Footer';
 import PageNotFound from './pages/404/PageNotFound';
 import Explore from './pages/explore/Explore';
 import Home from "./pages/home/Home";
