@@ -4,7 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import "./searchResult.scss";
 import { fetchDataFromAPi } from '../../Utils/api';
 import ContentWrapper from '../../components/contentWrapper/ContentWrapper';
-// import MovieCard from '../../components/'
+import MovieCard from '../../components/movieCard/MovieCard';
 import Spinner from '../../components/spinner/Spinner';
 // import noRes
 
@@ -39,6 +39,7 @@ function SearchResult() {
   }
 
   useEffect( ()=>{
+    setPageNum(1);
     fetchInitialData();
   },[query])
 
@@ -53,6 +54,19 @@ function SearchResult() {
               <div className="pageTitle">
                 {`Search ${data.total_results > 1 ? "results" :"result"} of '${query}'`}
               </div>
+              <InfiniteScroll
+              className='content'
+              dataLength={data?.results.length || []}
+              next={fetchNextPageData}
+              hasMore={pageNum <= data?.total_pages}
+              loader={<Spinner/>}>
+                {data?.results?.map( (item, index)=>{
+                  if(item.media_type==="person") return;
+                  return(
+                    <MovieCard key={index} data={item} fromSearch={true}/> 
+                  )
+                })}
+              </InfiniteScroll>
               </>
           ):(<span classname="resultNotFound">
             Sorry, Result Not Found!
