@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs"; //date format changer
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import Img from "../lazyLoadImg/Img";
+import Img from "../lazyLoadimg/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./carousel.scss";
 import CircleRating from "../circleRating/CircleRating";

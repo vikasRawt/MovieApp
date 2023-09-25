@@ -9,7 +9,7 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import useFetch from "../../../customHooks/UseFetch";
 import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
-import Img from "../../../components/lazyLoadImg/Img";
+import Img from "../../../components/lazyLoadimg/Img";
 import PosterFallback from "../../../assets/no-poster.png";
 import { PlayBtn } from "../PlayBtn";
 import VideoPopup from "../../../components/videoPop-up/VideoPopUp";
